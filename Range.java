@@ -18,7 +18,7 @@ public class Range implements IntegerSequence {
   }
 
   public boolean hasNext() {
-    return current != end;
+    return current < end;
   }
 
   // @throws NoSuchElementException
