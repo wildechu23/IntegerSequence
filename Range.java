@@ -10,23 +10,24 @@ public class Range implements IntegerSequence {
   }
 
   public void reset() {
-    current = start;
+    current = 0;
   }
 
   public int length() {
-    return end - start;
+    return end - start + 1;
   }
 
   public boolean hasNext() {
-    return current < end;
+    return current < length();
   }
 
   // @throws NoSuchElementException
   public int next() {
-    if(current == end) {
+    if(current > length()) {
       throw new NoSuchElementException();
     } else {
-      return current++;
+      current++;
+      return current - 2;
     }
   }
 
